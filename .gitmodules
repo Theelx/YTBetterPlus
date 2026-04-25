@@ -46,3 +46,6 @@
 [submodule "Tweaks/YTweaks"]
 	path = Tweaks/YTweaks
 	url = https://github.com/fosterbarnes/YTweaks.git
+[submodule "Tweaks/iSponsorBlock2"]
+	path = Tweaks/iSponsorBlock2
+	url = https://github.com/Theelx/iSponsorBlock2.git
