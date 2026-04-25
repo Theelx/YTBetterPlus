@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: main
           ref: ${{ github.ref }}
@@ -57,7 +57,7 @@ jobs:
           pipx install --force https://github.com/asdfzxcvbn/pyzule-rw/archive/main.zip
 
       - name: Download Theos
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: theos/theos
           ref: master
@@ -65,13 +65,13 @@ jobs:
           submodules: recursive
           
       - name: Checkout YouTubeHeader
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: PoomSmart/YouTubeHeader
           path: ${{ github.workspace }}/theos/include/YouTubeHeader
 
       - name: Checkout PSHeader
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: PoomSmart/PSHeader
           path: ${{ github.workspace }}/theos/include/PSHeader
@@ -84,7 +84,7 @@ jobs:
 
       - name: iOS SDK Caching
         id: SDK
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: iOS-${{ inputs.sdk_version }}-14.5-16.2-SDK
         with:
@@ -152,7 +152,7 @@ jobs:
           
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: YTBetterPlus_${{ steps.prepare_yt.outputs.version_tag }}
           path: ${{ github.workspace }}/output/YTBetterPlus_${{ steps.prepare_yt.outputs.version_tag }}.ipa
